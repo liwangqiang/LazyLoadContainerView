@@ -13,6 +13,8 @@
 		1FD24F931D54AA0E005F6555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD24F921D54AA0E005F6555 /* Assets.xcassets */; };
 		1FD24F961D54AA0E005F6555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD24F941D54AA0E005F6555 /* LaunchScreen.storyboard */; };
 		1FD24FA11D54AA0E005F6555 /* LazyLoadContainerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24FA01D54AA0E005F6555 /* LazyLoadContainerViewTests.swift */; };
+		1FD24FAC1D54AB1F005F6555 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24FAB1D54AB1F005F6555 /* SegueHandlerType.swift */; };
+		1FD24FAE1D54B33F005F6555 /* SubView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD24FAD1D54B33F005F6555 /* SubView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		1FD24F9C1D54AA0E005F6555 /* LazyLoadContainerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyLoadContainerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD24FA01D54AA0E005F6555 /* LazyLoadContainerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoadContainerViewTests.swift; sourceTree = "<group>"; };
 		1FD24FA21D54AA0E005F6555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD24FAB1D54AB1F005F6555 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
+		1FD24FAD1D54B33F005F6555 /* SubView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				1FD24F921D54AA0E005F6555 /* Assets.xcassets */,
 				1FD24F941D54AA0E005F6555 /* LaunchScreen.storyboard */,
 				1FD24F971D54AA0E005F6555 /* Info.plist */,
+				1FD24FAB1D54AB1F005F6555 /* SegueHandlerType.swift */,
+				1FD24FAD1D54B33F005F6555 /* SubView.storyboard */,
 			);
 			path = LazyLoadContainerView;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 			files = (
 				1FD24F961D54AA0E005F6555 /* LaunchScreen.storyboard in Resources */,
 				1FD24F931D54AA0E005F6555 /* Assets.xcassets in Resources */,
+				1FD24FAE1D54B33F005F6555 /* SubView.storyboard in Resources */,
 				1FD24F911D54AA0E005F6555 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FD24F8E1D54AA0E005F6555 /* ViewController.swift in Sources */,
+				1FD24FAC1D54AB1F005F6555 /* SegueHandlerType.swift in Sources */,
 				1FD24F8C1D54AA0E005F6555 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +339,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bruceli.LazyLoadContainerView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -342,6 +351,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bruceli.LazyLoadContainerView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

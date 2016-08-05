@@ -8,18 +8,92 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case BrownSegue
+        case CyanSegue
+        case PurpleSegue
+    }
 
+    
+    var brownViewController: UIViewController?
+    var purpleViewController: UIViewController?
+    var cyanViewController: UIViewController?
+    
+    var currentViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // Fix ME: more better way to release sub view controller
+        if brownViewController != currentViewController {
+            brownViewController?.view.removeFromSuperview()
+            brownViewController = nil
+        }
+        if purpleViewController != currentViewController {
+            purpleViewController?.view.removeFromSuperview()
+            purpleViewController = nil
+        }
+        if cyanViewController != currentViewController {
+            cyanViewController?.view.removeFromSuperview()
+            cyanViewController = nil
+        }
     }
-
-
+    
+    @IBAction func clickCyanButton(sender: UIButton) {
+        if cyanViewController == nil {
+            performSegue(.CyanSegue)
+        }
+        self.cyanViewController?.view.hidden = false
+        self.purpleViewController?.view.hidden = true
+        self.brownViewController?.view.hidden = true
+        currentViewController = cyanViewController
+    }
+    
+    @IBAction func clickBrownButton(sender: UIButton) {
+        if brownViewController == nil {
+            performSegue(.BrownSegue)
+        }
+        self.cyanViewController?.view.hidden = true
+        self.purpleViewController?.view.hidden = true
+        self.brownViewController?.view.hidden = false
+        currentViewController = brownViewController
+    }
+    
+    @IBAction func clickPurpleButton(sender: UIButton) {
+        if purpleViewController == nil {
+            performSegue(.PurpleSegue)
+        }
+        self.cyanViewController?.view.hidden = true
+        self.purpleViewController?.view.hidden = false
+        self.brownViewController?.view.hidden = true
+        currentViewController = purpleViewController
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segueIdentifierFrom(segue.identifier) {
+        case .BrownSegue:
+            brownViewController = segue.destinationViewController
+        case .CyanSegue:
+            cyanViewController = segue.destinationViewController
+        case .PurpleSegue:
+            purpleViewController = segue.destinationViewController
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        switch segueIdentifierFrom(identifier) {
+        case .BrownSegue:
+            return false
+        case .CyanSegue:
+            return false
+        case .PurpleSegue:
+            return false
+        }
+    }
 }
 
