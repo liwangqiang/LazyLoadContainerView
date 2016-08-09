@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SegueHandlerType {
+class RightViewController: UIViewController, SegueHandlerType {
     
     enum SegueIdentifier: String {
         case BrownSegue
@@ -25,6 +25,7 @@ class ViewController: UIViewController, SegueHandlerType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("RightViewController: viewDidLoad")
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,22 +79,25 @@ class ViewController: UIViewController, SegueHandlerType {
         switch segueIdentifierFrom(segue.identifier) {
         case .BrownSegue:
             brownViewController = segue.destinationViewController
+            print("BrownSegue")
         case .CyanSegue:
             cyanViewController = segue.destinationViewController
+            print("CyanSegue")
         case .PurpleSegue:
             purpleViewController = segue.destinationViewController
+            print("PurpleSegue")
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        switch segueIdentifierFrom(identifier) {
-        case .BrownSegue:
-            return false
-        case .CyanSegue:
-            return false
-        case .PurpleSegue:
-            return false
-        }
-    }
+//    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+//        switch segueIdentifierFrom(identifier) {
+//        case .BrownSegue:
+//            return false
+//        case .CyanSegue:
+//            return false
+//        case .PurpleSegue:
+//            return false
+//        }
+//    }
 }
 
