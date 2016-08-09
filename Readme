@@ -1,0 +1,5 @@
+view的层级关系决定了Embbed Segue的加载顺序, rule as following
+0. 正常顺序log在demo的日志中
+1. 子vc的view都加载完, 父vc的viewDidLoad调用
+2. self.view是同步调用， 执行完之后该view下所有Embbed Segue都调用过了，但测试发现vc viewDidLoad还没有
+3. 通过 let _ = vc.view 来改变加载顺序
