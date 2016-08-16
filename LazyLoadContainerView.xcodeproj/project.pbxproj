@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F52C4871D63176300A9684F /* EqualLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F52C4861D63176300A9684F /* EqualLayoutView.swift */; };
 		1FD24F8C1D54AA0E005F6555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24F8B1D54AA0E005F6555 /* AppDelegate.swift */; };
-		1FD24F8E1D54AA0E005F6555 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24F8D1D54AA0E005F6555 /* RightViewController.swift */; };
+		1FD24F8E1D54AA0E005F6555 /* RightSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD24F8D1D54AA0E005F6555 /* RightSideViewController.swift */; };
 		1FD24F911D54AA0E005F6555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD24F8F1D54AA0E005F6555 /* Main.storyboard */; };
 		1FD24F931D54AA0E005F6555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD24F921D54AA0E005F6555 /* Assets.xcassets */; };
 		1FD24F961D54AA0E005F6555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD24F941D54AA0E005F6555 /* LaunchScreen.storyboard */; };
@@ -31,9 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F52C4861D63176300A9684F /* EqualLayoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqualLayoutView.swift; sourceTree = "<group>"; };
 		1FD24F881D54AA0D005F6555 /* LazyLoadContainerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyLoadContainerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD24F8B1D54AA0E005F6555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FD24F8D1D54AA0E005F6555 /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		1FD24F8D1D54AA0E005F6555 /* RightSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideViewController.swift; sourceTree = "<group>"; };
 		1FD24F901D54AA0E005F6555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FD24F921D54AA0E005F6555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FD24F951D54AA0E005F6555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,12 +89,13 @@
 		1FD24F8A1D54AA0E005F6555 /* LazyLoadContainerView */ = {
 			isa = PBXGroup;
 			children = (
-				1FD24F8D1D54AA0E005F6555 /* RightViewController.swift */,
+				1FD24F8D1D54AA0E005F6555 /* RightSideViewController.swift */,
 				1FE475EE1D5974A3005CD6B8 /* ContainerViewController.swift */,
 				1FD24FAB1D54AB1F005F6555 /* SegueHandlerType.swift */,
 				1FE475F01D597516005CD6B8 /* Storyboards */,
 				1FE475F11D597529005CD6B8 /* Support Files */,
 				1FE475F21D5978BA005CD6B8 /* LogViewController.swift */,
+				1F52C4861D63176300A9684F /* EqualLayoutView.swift */,
 			);
 			path = LazyLoadContainerView;
 			sourceTree = "<group>";
@@ -230,11 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FD24F8E1D54AA0E005F6555 /* RightViewController.swift in Sources */,
+				1FD24F8E1D54AA0E005F6555 /* RightSideViewController.swift in Sources */,
 				1FE475F31D5978BA005CD6B8 /* LogViewController.swift in Sources */,
 				1FD24FAC1D54AB1F005F6555 /* SegueHandlerType.swift in Sources */,
 				1FE475EF1D5974A3005CD6B8 /* ContainerViewController.swift in Sources */,
 				1FD24F8C1D54AA0E005F6555 /* AppDelegate.swift in Sources */,
+				1F52C4871D63176300A9684F /* EqualLayoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

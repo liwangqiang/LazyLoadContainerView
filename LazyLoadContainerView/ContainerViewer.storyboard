@@ -47,10 +47,14 @@
             </objects>
             <point key="canvasLocation" x="1128" y="401"/>
         </scene>
-        <!--Log View Controller-->
+        <!--Left SideVC-->
         <scene sceneID="Q8R-be-u1C">
             <objects>
-                <viewController id="TsY-oT-07b" customClass="LogViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TsY-oT-07b" customClass="LeftSideVC" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XGw-az-y9a"/>
+                        <viewControllerLayoutGuide type="bottom" id="0sA-Vk-Tqj"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e5S-rU-UBY">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

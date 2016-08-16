@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Right View Controller-->
+        <!--Right Side View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RightViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RightSideViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,83 +17,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxw-0r-4ag" userLabel="PurpleSegue">
-                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
-                                <connections>
-                                    <segue destination="gkl-Vb-88o" kind="embed" identifier="PurpleSegue" id="DO1-3F-VvY"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWr-kz-ktu" userLabel="BrownSegue">
-                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
-                                <connections>
-                                    <segue destination="33t-Sp-CJg" kind="embed" identifier="BrownSegue" id="bcv-cg-PyU"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4s-M1-x76" userLabel="CyanSegue">
-                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
-                                <connections>
-                                    <segue destination="R9W-3N-1GE" kind="embed" identifier="CyanSegue" id="Axe-Qn-2pY"/>
-                                </connections>
-                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQ5-Ry-jut" userLabel="Container" customClass="SizeMatchView" customModule="LazyLoadContainerView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="600" height="542"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxw-0r-4ag" userLabel="PurpleSegue">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
+                                        <connections>
+                                            <segue destination="gkl-Vb-88o" kind="embed" identifier="PurpleSegue" id="DO1-3F-VvY"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWr-kz-ktu" userLabel="BrownSegue">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
+                                        <connections>
+                                            <segue destination="33t-Sp-CJg" kind="embed" identifier="BrownSegue" id="bcv-cg-PyU"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4s-M1-x76" userLabel="CyanSegue">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
+                                        <connections>
+                                            <segue destination="R9W-3N-1GE" kind="embed" identifier="CyanSegue" id="Axe-Qn-2pY"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="G4s-M1-x76" firstAttribute="top" secondItem="iQ5-Ry-jut" secondAttribute="top" id="0cH-GN-5iC"/>
+                                    <constraint firstItem="mWr-kz-ktu" firstAttribute="leading" secondItem="iQ5-Ry-jut" secondAttribute="leading" id="7pJ-mT-DEc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bxw-0r-4ag" secondAttribute="bottom" id="Ko0-Kh-leP"/>
+                                    <constraint firstItem="mWr-kz-ktu" firstAttribute="top" secondItem="iQ5-Ry-jut" secondAttribute="top" id="LKV-AN-lEb"/>
+                                    <constraint firstAttribute="bottom" secondItem="mWr-kz-ktu" secondAttribute="bottom" id="Mwn-Rp-7HI"/>
+                                    <constraint firstAttribute="bottom" secondItem="G4s-M1-x76" secondAttribute="bottom" id="eMO-gJ-BJK"/>
+                                    <constraint firstItem="G4s-M1-x76" firstAttribute="leading" secondItem="iQ5-Ry-jut" secondAttribute="leading" id="fje-yI-S2Y"/>
+                                    <constraint firstItem="Bxw-0r-4ag" firstAttribute="top" secondItem="iQ5-Ry-jut" secondAttribute="top" id="lP2-Dw-jXw"/>
+                                    <constraint firstItem="Bxw-0r-4ag" firstAttribute="leading" secondItem="iQ5-Ry-jut" secondAttribute="leading" id="sjO-NE-Iuo"/>
+                                    <constraint firstAttribute="trailing" secondItem="mWr-kz-ktu" secondAttribute="trailing" id="uIl-6C-WVZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bxw-0r-4ag" secondAttribute="trailing" id="vI4-NH-xSd"/>
+                                    <constraint firstAttribute="trailing" secondItem="G4s-M1-x76" secondAttribute="trailing" id="wXP-3h-9sS"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eux-fB-xuY">
-                                <rect key="frame" x="153" y="20" width="35" height="30"/>
+                                <rect key="frame" x="203" y="20" width="35" height="30"/>
                                 <state key="normal" title="Cyan"/>
                                 <connections>
                                     <action selector="clickCyanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pkd-Nu-afA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZO-VN-ri7">
-                                <rect key="frame" x="328" y="20" width="44" height="30"/>
-                                <state key="normal" title="Brown"/>
-                                <connections>
-                                    <action selector="clickBrownButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tr7-Oe-LM3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deo-Gh-Jfy">
-                                <rect key="frame" x="245" y="20" width="45" height="30"/>
+                                <rect key="frame" x="278" y="20" width="45" height="30"/>
                                 <state key="normal" title="Purple"/>
                                 <connections>
                                     <action selector="clickPurpleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXg-Xp-DmL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZO-VN-ri7">
+                                <rect key="frame" x="354" y="20" width="44" height="30"/>
+                                <state key="normal" title="Brown"/>
+                                <connections>
+                                    <action selector="clickBrownButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tr7-Oe-LM3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="deo-Gh-Jfy" firstAttribute="leading" secondItem="eux-fB-xuY" secondAttribute="trailing" constant="57" id="0f7-kH-s5t"/>
-                            <constraint firstItem="eux-fB-xuY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7el-q4-FDX"/>
-                            <constraint firstItem="G4s-M1-x76" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="ALL-2S-lWC"/>
-                            <constraint firstItem="G4s-M1-x76" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CoD-bO-k80"/>
-                            <constraint firstItem="eux-fB-xuY" firstAttribute="baseline" secondItem="deo-Gh-Jfy" secondAttribute="baseline" id="Fnl-le-QDE"/>
-                            <constraint firstAttribute="trailing" secondItem="G4s-M1-x76" secondAttribute="trailing" id="TKy-Zo-ho9"/>
-                            <constraint firstItem="mWr-kz-ktu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UuT-sh-u0p"/>
-                            <constraint firstItem="CZO-VN-ri7" firstAttribute="leading" secondItem="deo-Gh-Jfy" secondAttribute="trailing" constant="38" id="YJI-Cw-fKT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mWr-kz-ktu" secondAttribute="bottom" id="Ysc-rF-Hk9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G4s-M1-x76" secondAttribute="bottom" id="Zub-6U-rN0"/>
-                            <constraint firstItem="deo-Gh-Jfy" firstAttribute="baseline" secondItem="CZO-VN-ri7" secondAttribute="baseline" id="jvt-6D-mdV"/>
-                            <constraint firstAttribute="trailing" secondItem="mWr-kz-ktu" secondAttribute="trailing" id="p7R-gA-ZXN"/>
-                            <constraint firstAttribute="trailing" secondItem="Bxw-0r-4ag" secondAttribute="trailing" id="qa8-tH-bie"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bxw-0r-4ag" secondAttribute="bottom" id="qp7-Wy-JDI"/>
-                            <constraint firstItem="eux-fB-xuY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="153" id="ruh-xQ-8bq"/>
-                            <constraint firstItem="Bxw-0r-4ag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rvX-WF-ZG7"/>
-                            <constraint firstItem="Bxw-0r-4ag" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="xOR-9k-Dx6"/>
-                            <constraint firstItem="mWr-kz-ktu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="zje-n0-IFh"/>
+                            <constraint firstItem="CZO-VN-ri7" firstAttribute="leading" secondItem="deo-Gh-Jfy" secondAttribute="trailing" constant="31" id="3x2-lP-CwA"/>
+                            <constraint firstItem="deo-Gh-Jfy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7sG-No-J7U"/>
+                            <constraint firstItem="deo-Gh-Jfy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8xp-Pz-3Yh"/>
+                            <constraint firstItem="CZO-VN-ri7" firstAttribute="baseline" secondItem="deo-Gh-Jfy" secondAttribute="baseline" id="9IV-a3-xyY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iQ5-Ry-jut" secondAttribute="bottom" id="DhW-iJ-FCa"/>
+                            <constraint firstItem="deo-Gh-Jfy" firstAttribute="leading" secondItem="eux-fB-xuY" secondAttribute="trailing" constant="40" id="Rhu-kS-uEY"/>
+                            <constraint firstItem="eux-fB-xuY" firstAttribute="baseline" secondItem="deo-Gh-Jfy" secondAttribute="baseline" id="Vm0-f0-5J7"/>
+                            <constraint firstItem="iQ5-Ry-jut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b4I-Y7-KYA"/>
+                            <constraint firstAttribute="trailing" secondItem="iQ5-Ry-jut" secondAttribute="trailing" id="fR1-dO-9Iz"/>
+                            <constraint firstItem="iQ5-Ry-jut" firstAttribute="top" secondItem="eux-fB-xuY" secondAttribute="bottom" constant="8" id="zC9-GF-QA0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="iQ5-Ry-jut" id="1sw-Rt-7Py"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="395"/>
+            <point key="canvasLocation" x="351" y="403"/>
         </scene>
-        <!--Log View Controller-->
+        <!--BrownVC-->
         <scene sceneID="ZfF-gE-Stf">
             <objects>
-                <viewController id="33t-Sp-CJg" customClass="LogViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="33t-Sp-CJg" customClass="BrownVC" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bdK-92-xGl"/>
                         <viewControllerLayoutGuide type="bottom" id="cUT-Bo-2En"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kai-Vu-hi5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -102,16 +117,16 @@
             </objects>
             <point key="canvasLocation" x="1094" y="395"/>
         </scene>
-        <!--Log View Controller-->
+        <!--PurpleVC-->
         <scene sceneID="AlO-it-W7p">
             <objects>
-                <viewController id="gkl-Vb-88o" customClass="LogViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gkl-Vb-88o" customClass="PurpleVC" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1If-Fa-FrU"/>
                         <viewControllerLayoutGuide type="bottom" id="lhF-vM-LEA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="flQ-dq-oUG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -120,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="382" y="1197"/>
         </scene>
-        <!--Log View Controller-->
+        <!--CyanVC-->
         <scene sceneID="kop-NV-dqf">
             <objects>
-                <viewController id="XXg-8f-sEb" customClass="LogViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XXg-8f-sEb" customClass="CyanVC" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TN3-76-Yk2"/>
                         <viewControllerLayoutGuide type="bottom" id="SgG-DB-hm8"/>

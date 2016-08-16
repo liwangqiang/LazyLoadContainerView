@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Log View Controller-->
+        <!--CyanVC-->
         <scene sceneID="JNz-Ls-fOf">
             <objects>
-                <viewController id="vg7-OB-JMx" customClass="LogViewController" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vg7-OB-JMx" customClass="CyanVC" customModule="LazyLoadContainerView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r6u-Yh-xoj"/>
                         <viewControllerLayoutGuide type="bottom" id="Gjt-oh-rb3"/>

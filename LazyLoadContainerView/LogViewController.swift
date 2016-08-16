@@ -16,21 +16,23 @@ class LogViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("\(NSStringFromClass(self.dynamicType)): viewDidLoad")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("\(NSStringFromClass(self.dynamicType)): viewWillAppear")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("\(NSStringFromClass(self.dynamicType)): viewWillDisappear")
     }
-    */
-
 }
+
+
+class CyanVC: LogViewController {}
+
+class PurpleVC: LogViewController {}
+
+class BrownVC: LogViewController {}
+
+class LeftSideVC: LogViewController {}
