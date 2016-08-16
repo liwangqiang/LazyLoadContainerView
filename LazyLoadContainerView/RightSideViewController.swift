@@ -62,6 +62,7 @@ class RightSideViewController: LogViewController, SegueHandlerType {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // let _ = segue.destinationViewController.view
         switch segueIdentifierFrom(segue.identifier) {
         case .BrownSegue:
             brownViewController = segue.destinationViewController
