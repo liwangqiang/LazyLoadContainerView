@@ -29,9 +29,6 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         super.viewDidLoad()
         
         /// 没有storyboard的container view也可以perform embbed segue, 且会自动加上 container view + vc.view
-        self.container.subviews.forEach {
-            $0.removeFromSuperview()
-        }
     }
     
     @IBAction func clickCyanButton(sender: UIButton) {
@@ -92,17 +89,23 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         guard vc != currentViewController else {
             return
         }
-        currentViewController = vc
         
-        if let container = vc.view.superview where container.superview == nil {
-            self.container.addSubview(container)
-            self.view.setNeedsLayout()
-        }
-        
-        self.childViewControllers.forEach { [unowned self] in
-            if $0 !== self.currentViewController {
-                $0.view.superview?.removeFromSuperview()
+        self.childViewControllers.forEach {
+            if $0 != vc {
+                $0.view.superview?.hidden = true
+            } else {
+                $0.view.superview?.hidden = false
             }
         }
+        
+        let lastViewController = currentViewController
+        
+        vc.beginAppearanceTransition(true, animated: false)
+        vc.endAppearanceTransition()
+        
+        lastViewController?.beginAppearanceTransition(false, animated: false)
+        lastViewController?.endAppearanceTransition()
+        
+        currentViewController = vc
     }
 }

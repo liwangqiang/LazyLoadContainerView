@@ -8,3 +8,11 @@ view的层级关系决定了Embbed Segue的加载顺序, rule as following
 
 5. 对于一个vc， 先 invoke prepare for it’s embed segue， then invoke it’s viewDidLoad
 6. 通过 let _ = segue.destinationViewController.view 来强行加载segue.destinationViewController.view的viewDidLoad
+
+
+
+others: 
+1.没有storyboard的container view也可以perform embbed segue, 且会自动加上 container view + vc.view, 有了vc.view就不可以触发了, 会crash
+2. 触发view{will/did}Appear的安全方法： 
+  vc.beginAppearanceTransition(true, animated: false)
+  vc.endAppearanceTransition()
