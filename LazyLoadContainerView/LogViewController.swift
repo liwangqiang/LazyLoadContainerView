@@ -14,17 +14,17 @@ class LogViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("\(NSStringFromClass(self.dynamicType)): viewDidLoad")
+        print("\(NSStringFromClass(type(of: self))): viewDidLoad")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("\(NSStringFromClass(self.dynamicType)): viewWillAppear")
+        print("\(NSStringFromClass(type(of: self))): viewWillAppear")
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("\(NSStringFromClass(self.dynamicType)): viewWillDisappear")
+        print("\(NSStringFromClass(type(of: self))): viewWillDisappear")
     }
 }
 

@@ -31,7 +31,7 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         /// 没有storyboard的container view也可以perform embbed segue, 且会自动加上 container view + vc.view
     }
     
-    @IBAction func clickCyanButton(sender: UIButton) {
+    @IBAction func clickCyanButton(_ sender: UIButton) {
         if cyanViewController == nil {
             performSegue(.CyanSegue)
         }
@@ -40,7 +40,7 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         }
     }
     
-    @IBAction func clickBrownButton(sender: UIButton) {
+    @IBAction func clickBrownButton(_ sender: UIButton) {
         if brownViewController == nil {
             performSegue(.BrownSegue)
         }
@@ -49,7 +49,7 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         }
     }
     
-    @IBAction func clickPurpleButton(sender: UIButton) {
+    @IBAction func clickPurpleButton(_ sender: UIButton) {
         if purpleViewController == nil {
             performSegue(.PurpleSegue)
         }
@@ -58,23 +58,23 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // let _ = segue.destinationViewController.view
         switch segueIdentifierFrom(segue.identifier) {
         case .BrownSegue:
-            brownViewController = segue.destinationViewController
+            brownViewController = segue.destination
             print("BrownSegue")
         case .CyanSegue:
-            cyanViewController = segue.destinationViewController
+            cyanViewController = segue.destination
             print("CyanSegue")
         case .PurpleSegue:
-            purpleViewController = segue.destinationViewController
+            purpleViewController = segue.destination
             print("PurpleSegue")
         }
     }
     
     /// 这里来控制一开始是否执行embbed segue
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch segueIdentifierFrom(identifier) {
         case .BrownSegue:
             return false
@@ -85,16 +85,16 @@ class RightSideViewController: LogViewController, SegueHandlerType {
         }
     }
 
-    func showViewController(vc: UIViewController) {
+    func showViewController(_ vc: UIViewController) {
         guard vc != currentViewController else {
             return
         }
         
         self.childViewControllers.forEach {
             if $0 != vc {
-                $0.view.superview?.hidden = true
+                $0.view.superview?.isHidden = true
             } else {
-                $0.view.superview?.hidden = false
+                $0.view.superview?.isHidden = false
             }
         }
         
